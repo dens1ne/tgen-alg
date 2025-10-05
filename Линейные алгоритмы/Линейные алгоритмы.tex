@@ -132,7 +132,7 @@ int min_pref = 0;
 for (int i = 0; i < n; ++i) {
     min_pref = std::min(min_pref, pref[i + 1]);
     if (pref[i + 1] - min_pref > ans) {
-        ans = pref[i + 1];
+        ans = pref[i + 1] - min_pref;
     }
 }
           \end{minted}
@@ -171,7 +171,7 @@ pref[i][j] = x[i][j] +
 \end{center}
 
 Тогда площадью фиолотового треугольника является: \begin{minted}[frame=single]{cpp}
-prefs[rx][ry]
+ans = prefs[rx][ry]
     - prefs[rx][ly - 1] - prefs[lx - 1][ry]
     + prefs[lx - 1][ly - 1]
 \end{minted}
